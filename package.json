@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/deepthakannan/play-react/issues"
   },
-  "homepage": "https://github.com/deepthakannan/play-react#readme"
+  "homepage": "https://github.com/deepthakannan/play-react#readme",
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0"
+  }
 }
