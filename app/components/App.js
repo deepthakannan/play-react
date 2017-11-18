@@ -20,7 +20,8 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dateTime: new Date()
+            dateTime: new Date(),
+            updateCounter: 0
         };
     }
 
@@ -35,8 +36,11 @@ class App extends React.Component {
     }
 
     tick() {
-        this.setState({
-            dateTime: new Date()
+        this.setState((prevState, props) => {
+            return {
+                dateTime: new Date(),
+                updateCounter: prevState.updateCounter+1
+            }
         });
     }
 
@@ -45,6 +49,9 @@ class App extends React.Component {
           <Heading text={this.props.name} time={this.state}></Heading>
           <DateTime time={this.state.dateTime} country="India" timeZone="Asia/Kolkata"></DateTime>
           <DateTime time={this.state.dateTime} country="Boston-USA" timeZone="America/New_York"></DateTime>
+          {
+              this.state.updateCounter > 10 ? <h3>Updated more than 10 times</h3> : <h3>Updated {this.state.updateCounter} times</h3>
+          }
       </div> 
     }
   }
