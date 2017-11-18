@@ -1,6 +1,6 @@
 var Hello = React.createClass({
   render: function() {
-    return React.createElement("div", null, `Hello ${this.props.toWhat}`);
+    return React.createElement("div", null, `Hello ${this.props.toWhat}!`);
   }
 });
 
