@@ -17,6 +17,13 @@ function DateTime(props) {
     );        
 }
 
+function TimeZoneButton(props) {
+    
+        return (
+            <button onClick={ () => props.onBtnClick(props.timeZone) }>{props.timeZone}</button>
+        )
+}
+
 class TimeZones extends React.Component {
     constructor(props) {
         super(props);
@@ -30,7 +37,7 @@ class TimeZones extends React.Component {
     render() {
         var timeZoneButtons = [];
         this.timeZones.forEach((timeZone) => {
-            timeZoneButtons.push(<button key={timeZone} onClick={ () => this.timeZoneClicked(timeZone) }>{timeZone}</button>);
+            timeZoneButtons.push(<TimeZoneButton key={timeZone} timeZone={timeZone} onBtnClick={(timeZone) => this.timeZoneClicked(timeZone)}></TimeZoneButton>);
         })
 
         return (
