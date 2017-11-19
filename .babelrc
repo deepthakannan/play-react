@@ -1,1 +1,4 @@
-{ "presets": ["react"]}
+{ 
+    "presets": ["react"],
+    "plugins": ["transform-es2015-arrow-functions", "transform-class-properties"]
+}
