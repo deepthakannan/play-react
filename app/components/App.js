@@ -1,52 +1,8 @@
 var React = require("react");
+var Heading = require("./Heading");
+var TimeZones = require("./TimeZones");
+var DateTime = require("./DateTime");
 
-// setInterval(tick, 1000);
-function Heading(props) {
-    return (
-    <div>
-        <h1>Hello, {props.text}</h1>
-    </div>
-    );        
-}
-
-function DateTime(props) {
-    return (
-    <div>
-        <h2>Current time in {props.country} is {props.time.toLocaleTimeString("indian", {timeZone: props.timeZone ? props.timeZone : "America/New_York" })}.</h2>
-    </div>
-    );        
-}
-
-function TimeZoneButton(props) {
-    
-        return (
-            <button onClick={ () => props.onBtnClick(props.timeZone) }>{props.timeZone}</button>
-        )
-}
-
-class TimeZones extends React.Component {
-    constructor(props) {
-        super(props);
-        this.timeZones = ["Asia/Kolkata", "America/New_York", "Asia/Shanghai" ];
-    }
-        
-    timeZoneClicked = (timeZone) => {
-        this.props.timeZoneClicked(timeZone);
-    }
-    
-    render() {
-        var timeZoneButtons = [];
-        this.timeZones.forEach((timeZone) => {
-            timeZoneButtons.push(<TimeZoneButton key={timeZone} timeZone={timeZone} onBtnClick={(timeZone) => this.timeZoneClicked(timeZone)}></TimeZoneButton>);
-        })
-
-        return (
-            <div>
-                {timeZoneButtons}
-            </div>
-        )
-    }    
-}
 class App extends React.Component {
     constructor(props) {
         super(props);
